@@ -2,17 +2,31 @@
 @import 'fonts';
 @import 'reset';
 @import 'global';
+@import 'animations';
 
 
 
 /* Header */
 .header {
     padding: 25px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform .6s, opacity .6s;
+    z-index: 100;
+    background-color: #0a192f;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &.hide {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
 }
 .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     &__list {
         display: flex;
         align-items: center;
@@ -24,8 +38,12 @@
         display: block;
         padding: 10px 20px;
         position: relative;
+        transition: color .6s;
+        &:hover {
+            color: $accent;
+        }
     }
-    &__link--active {
+    &__link.active {
         color: $accent;
         &::before {
             content: '';
@@ -43,15 +61,107 @@
 
 /* Greeting-section */
 .greeting {
+    padding: 0;
+    &__inner {
+        min-height: 100vh;
+        position: relative;
+    }
+    &__content {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+    &__more {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        &::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 26%;
+            width: 35px;
+            height: 35px;
+            border: 2px solid $accent;
+            transform: rotate(45deg);
+            transition: all .8s;
+        }
+        &:hover::after {
+            transform: rotate(360deg);
+            border-color: #fff;
+            opacity: 0;
+        }
+        &:hover .greeting__more-text{
+            color: $accent;
+            opacity: 1;
+            svg {
+                fill: $accent;
+            }
+        }
+    }
+    &__more-text {
+        opacity: 0;
+        transition: opacity .8s, color .6s;
+        padding-bottom: 25px;
+        position: relative;
+
+    }
+    &__more-text span {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        svg {
+            width: inherit;
+            height: inherit;
+            transition: fill .6s;
+        }
+    }
+    &__text {
+        color: $accent;
+        margin-bottom: 20px;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    &__title {
+        font-size: 4.5em    ;
+        line-height: 1.15em;
+        margin-bottom: 35px;
+        letter-spacing: 5px;
+    }
+    &__subtitle {
+        font-size: 3.5em;
+        line-height: 1.2em;
+        letter-spacing: 3px;
+    }
+}
+
+
+
+/* About-section */
+.about {
+    &__content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 70px;
+    }
+    &__text {
+        font-size: 1.25em;
+        line-height: 1.5em;
+        max-width: 50%;
+        width: 100%
+    }
     &__img-box {
         width: 278px;
         height: 278px;
         margin: 0 auto;
-        &:hover {
-            .greeting__img {
-                box-shadow: rgba(0, 199, 197, 0.3) 0px 19px 38px, rgba(0, 199, 197, 0.22) 0px 15px 12px;
-            }
-        }
     }
     &__img {
         width: 100%;
@@ -61,30 +171,192 @@
         filter: brightness(0.9);
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     }
-    &__content {
-        margin-top: 40px;
-        text-align: center;
-    }
-    &__text {
-        color: $accent;
-        margin-bottom: 20px;
-        font-size: 20px;
-        letter-spacing: 1px;
-    }
-    &__title {
-        font-size: 62px;
-        line-height: 72px;
-        margin-bottom: 20px;
-        letter-spacing: 5px;
-    }
-    &__subtitle {
-        font-size: 54px;
-        line-height: 64px;
-        letter-spacing: 3px;
+    &__cv {
+        margin-top: 70px;
     }
 }
 
 
+.facts {
+    &__title {
+        font-size: 1.7em;
+        line-height: 1.2em;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-height: 260px;
+    }
+    &__item {
+        max-width: 40%;
+        width: 100%;
+        font-size: 1.25em;
+        line-height: 1.5em;
+        padding: 10px 10px 10px 25px;
+        transition: opacity 1s;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background-image: url('../images/icons/dot.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    &__item.fade {
+        opacity: 0;
+    }
+}
+
+
+
+/* Skills-section*/
+.skills {
+    &__content {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__box-other {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__box {
+        max-width: 40%;
+    }
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+        height: 100px;
+        width: 100px;
+        border: 2px solid $accent;
+        border-radius: 50%;
+        box-shadow: rgba(0, 199, 197, 0.35) 0px 5px 15px;
+    }
+    &__subtitle {
+        text-align: center;
+    }
+}
+
+
+/* Portfolio-section */
+.portfolio {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__tab {
+        padding: 10px;
+        overflow: hidden;
+    }
+    &__btn {
+        display: block;
+        background-color: transparent;
+        border: none;
+        color: $default;
+        cursor: pointer;
+        padding: 7px 15px;
+        position: relative;
+        outline: transparent;
+        transition: color .6s, box-shadow .6s;
+        &:hover,
+        &.active {
+            color: $accent;
+            box-shadow: rgba(0, 199, 197, 0.24) 0px 3px 8px;
+        }
+    }
+
+    &__link-box {
+        display: none;
+        transform: translateY(200%);
+        opacity: 0;
+        transition: transform .6s, opacity 0.6s;
+    }
+    &__link-box.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+   
+    &__link {
+        display: block;
+        margin: 5px 0 0 15px;
+        padding: 2px 0 2px 15px;
+        position: relative;
+        transition: all .6s;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 5px;
+            background-color: $accent;
+            border-radius: 50%;
+        }
+        &:hover {
+            color: $accent;
+        }
+    }
+    &__preview {
+        padding-bottom: 70px;
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    padding: 40px 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    &__contact {
+        display: none;
+        margin-bottom: 20px;
+    }
+    &__contact-list {
+        display: flex;
+        justify-content: center;
+    }
+    &__contact-item {
+        padding: 0 20px;
+    }
+    &__link {
+        display: block;
+        width: 25px;
+        height: 25px;
+        svg {
+            width: inherit;
+            height: inherit;
+            path {
+                transition: fill .6s;
+            }
+        }
+        &:hover svg path {
+            fill: $accent;
+        }
+    }
+    &__text {
+        text-align: center;
+        font-size: 1.2em;
+    }
+}
 
 
 

@@ -1,0 +1,19 @@
+@keyframes fade {
+    0% {
+        opacity: .4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+}

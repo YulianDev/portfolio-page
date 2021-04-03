@@ -11,22 +11,28 @@
 <body>
     <header class="header">
         <div class="container">
-            <nav class="menu">
-                <a href="/" class="logo">
+            <div class="header__inner">
+                <a class="logo" href="/">
                     Y
                 </a>
-                <ul class="menu__list">
-                    <li class="menu__item">
-                        <a href="#" class="menu__link menu__link--active">About me</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="#" class="menu__link">My skills</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="#" class="menu__link">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+                <nav class="menu">
+                    <div class="menu__icon">
+                        <span></span>
+                    </div>
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a class="menu__link nav-link active" href="#about">About me</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link nav-link" href="#skills">My skills</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
         </div>
     </header>
     <div class="social-box">
@@ -43,7 +49,8 @@
                 </a>
             </li>
             <li class="social-box__item">
-                <a class="social-box__link" href="https://www.facebook.com/profile.php?id=100011425415218" target="_blank">
+                <a class="social-box__link" href="https://www.facebook.com/profile.php?id=100011425415218"
+                    target="_blank">
                     <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
                         class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512">
@@ -56,25 +63,260 @@
         </ul>
     </div>
     <div class="mail-box">
-            <a class="mail-box__link" href="mailto:devlian.kov@gmail.com" target="_blank">devlian.kov@gmail.com</a>
+        <a class="mail-box__link" href="mailto:devlian.kov@gmail.com" target="_blank">devlian.kov@gmail.com</a>
     </div>
-    
+
     <main class="main">
         <section class="greeting">
             <div class="container">
                 <div class="greeting__inner">
-                    <div class="greeting__img-box">
-                        <img class="greeting__img" src="images/content/me.jpg" alt="Yulian">
-                    </div>
                     <div class="greeting__content">
                         <p class="greeting__text">Hi, my name is</p>
                         <h1 class="greeting__title">Yulian</h1>
                         <h2 class="greeting__subtitle">Junior Front-end Developer</h2>
                     </div>
+                    <a class="greeting__more nav-link" href="#about">
+                        <p class="greeting__more-text">Learn More
+                            <span>
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 407.437 407.437" style="enable-background:new 0 0 407.437 407.437;"
+                                    xml:space="preserve" fill="#fff">
+                                    <polygon
+                                        points="203.718,322.929 21.179,140.984 0,162.232 203.718,365.287 407.437,162.232 386.258,140.984 " />
+                                    <polygon
+                                        points="407.437,63.398 386.258,42.15 203.718,224.095 21.179,42.15 0,63.398 203.718,266.453 " />
+                                </svg>
+                            </span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__inner">
+                    <h3 class="title">About me</h3>
+                    <div class="about__content">
+                        <p class="about__text text">Hi! My name is Yulian and I'm glad to see you here. I'm just
+                            starting my journey in web development. My interest in development started a few years ago
+                            when I first heard about programing and tried to write some code. And then it became a some
+                            part of my life. I love learning new and I'm always looking for opportunities to work with
+                            those who are willing to share their knowledge.
+                        </p>
+                        <div class="about__img-box">
+                            <img class="about__img" src="images/content/me.jpg" alt="Yulian">
+                        </div>
+                    </div>
+                    <div class="about__fatcs facts">
+                        <h4 class="facts__title">
+                            Some random facts
+                            about me
+                        </h4>
+                        <ul class="facts__list">
+                            <li class="facts__item">I'm from Odessa region</li>
+                            <li class="facts__item">I drink a lot of tea</li>
+                            <li class="facts__item">Have an economic education</li>
+                            <li class="facts__item">Participated in education program 'Erasmus +'</li>
+                            <li class="facts__item">Love to cook (and eat)</li>
+                            <li class="facts__item">Studied in Poland</li>
+                            <li class="facts__item">The first programming language was Java</li>
+                            <li class="facts__item">Enjoy snowboarding</li>
+                        </ul>
+                    </div>
+                    <div class="cv-box about__cv">
+                        <a class="cv-box__link" href="docs/cv.pdf" target="_blank">Get my CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="skills__inner">
+                    <h3 class="title">Skills</h3>
+                    <div class="skills__content">
+                        <div class="skills__box">
+                            <h5 class="skills__subtitle subtitle">Main:</h5>
+                            <ul class="skills__main skills__list">
+                                <li class="skills__item">
+                                    <p class="text">HTML5</p>
+                                </li>
+                                <li class="skills__item">CSS3</li>
+                                <li class="skills__item">JavaScript basics</li>
+                                <li class="skills__item">Intermediate English</li>
+                                <li class="skills__item">JQuery</li>
+                                <li class="skills__item">Scss preprocessor</li>
+                                <li class="skills__item">CSS3 Media Queries</li>
+                                <li class="skills__item">BEM methodology</li>
+                                <li class="skills__item">Gulp</li>
+                                <li class="skills__item">Git</li>
+                                <li class="skills__item">Figma</li>
+                                <li class="skills__item">Photoshop</li>
+                            </ul>
+                        </div>
+
+                        <div class="skills__box skills__box-other">
+                            <div class="skills__box-inner">
+                                <h5 class="skills__subtitle subtitle">In progress:</h5>
+                                <ul class="skills__inprogress skills__list">
+                                    <li class="skills__item">Bootstrap 5</li>
+                                    <li class="skills__item">JavaScript</li>
+                                </ul>
+                            </div>
+                            <div class="skills__box-inner">
+                                <h5 class="skills__subtitle subtitle">Additional:</h5>
+                                <ul class="skills__additional skills__list">
+                                    <li class="skills__item">Java Syntax and Java Core</li>
+                                    <li class="skills__item">OOP principles</li>
+                                    <li class="skills__item">Data structures</li>
+                                    <li class="skills__item">IDE: IntelliJ IDEA and VSCode</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="portfolio__inner">
+                    <h3 class="title">Some of my works</h3>
+                    <div class="portfolio__content">
+                        <ul class="portfolio__tabs">
+                            <li class="portfolio__tab">
+                                <button class="portfolio__btn active">
+                                    KiliyaBuild
+                                </button>
+                                <div class="portfolio__link-box active" style="display: block;">
+                                    <a class="portfolio__link" href="#">View page</a>
+                                    <a class="portfolio__link" href="#">View code</a>
+                                </div>
+                            </li>
+                            <li class="portfolio__tab">
+                                <button class="portfolio__btn">
+                                    FlowerBox
+                                </button>
+                                <div class="portfolio__link-box">
+                                    <a class="portfolio__link" href="#">View page</a>
+                                    <a class="portfolio__link" href="#">View code</a>
+                                </div>
+                            </li>
+                            <li class="portfolio__tab">
+                                <button class="portfolio__btn">
+                                    SergThePistol
+                                </button>
+                                <div class="portfolio__link-box">
+                                    <a class="portfolio__link" href="#">View page</a>
+                                    <a class="portfolio__link" href="#">View code</a>
+                                </div>
+
+                            </li>
+                            <li class="portfolio__tab">
+                                <button class="portfolio__btn">
+                                    Mayak
+                                </button>
+
+                                <div class="portfolio__link-box">
+                                    <a class="portfolio__link" href="#">View page</a>
+                                    <a class="portfolio__link" href="#">View code</a>
+                                </div>
+
+                            </li>
+                        </ul>
+                        <div class="portfolio__preview">
+                            <div class="portfolio__slider slider">
+                                <div class="slider__item">
+                                    <img class="slider__img" src="images/content/slider/serg/1.jpg" alt="Main page">
+                                </div>
+                                <div class="slider__item">
+                                    <img class="slider__img" src="images/content/slider/serg/2.jpg" alt="Main page">
+                                </div>
+                                <div class="slider__item">
+                                    <img class="slider__img" src="images/content/slider/serg/3.jpg" alt="Main page">
+                                </div>
+                                <div class="slider__arrow-box">
+                                    <button class="slider__prevArrow" href="#" type="button">
+                                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="590.907px"
+                                            height="590.907px" viewBox="0 0 590.907 590.907"
+                                            style="enable-background:new 0 0 590.907 590.907;" xml:space="preserve">
+                                            <path fill="#fff" d="M522.177,42.788l0.977-2.653c4.256-11.545,3.602-21.436-1.949-29.391C516.517,4.015,508.759,0,500.457,0
+			c-6.744,0-13.326,2.485-20.089,7.586L81.482,262.937l-1.87,1.337c-9.293,7.356-14.642,18.045-14.679,29.324
+			c-0.037,11.279,5.248,22.001,14.492,29.418l0.899,0.723l400.003,259.454c6.787,5.187,13.406,7.714,20.205,7.714
+			c8.269,0,16.004-3.999,20.695-10.691c5.548-7.926,6.236-17.791,2.038-29.333l-0.955-2.632L356.08,300.981
+			c-0.862-4.152-0.851-10.392,0.027-14.547L522.177,42.788z M433.128,497.865L118.462,293.763l2.139-1.371h189.004
+			c-0.147,9.317,1.126,18.712,3.892,26.322l0.958,2.631L433.128,497.865z" />
+                                        </svg>
+                                    </button>
+                                    <button class="slider__nextArrow" href="#" type="button">
+                                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="590.907px"
+                                            height="590.907px" viewBox="0 0 590.907 590.907"
+                                            style="enable-background:new 0 0 590.907 590.907;" xml:space="preserve">
+                                            <path fill="#fff" d="M522.177,42.788l0.977-2.653c4.256-11.545,3.602-21.436-1.949-29.391C516.517,4.015,508.759,0,500.457,0
+			c-6.744,0-13.326,2.485-20.089,7.586L81.482,262.937l-1.87,1.337c-9.293,7.356-14.642,18.045-14.679,29.324
+			c-0.037,11.279,5.248,22.001,14.492,29.418l0.899,0.723l400.003,259.454c6.787,5.187,13.406,7.714,20.205,7.714
+			c8.269,0,16.004-3.999,20.695-10.691c5.548-7.926,6.236-17.791,2.038-29.333l-0.955-2.632L356.08,300.981
+			c-0.862-4.152-0.851-10.392,0.027-14.547L522.177,42.788z M433.128,497.865L118.462,293.763l2.139-1.371h189.004
+			c-0.147,9.317,1.126,18.712,3.892,26.322l0.958,2.631L433.128,497.865z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__contact">
+                    <ul class="footer__contact-list">
+                        <li class="footer__contact-item">
+                            <a class="footer__link" href="https://www.instagram.com/yulian_koval/?hl=en"
+                                target="_blank">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram"
+                                    class="svg-inline--fa fa-instagram fa-w-14" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path fill="#fff"
+                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <a class="footer__link" href="https://www.facebook.com/profile.php?id=100011425415218"
+                                target="_blank">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
+                                    class="svg-inline--fa fa-facebook-f fa-w-10" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="#fff"
+                                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer__contact-item">
+                            <a class="footer__link" href="mailto:devlian.kov@gmail.com">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+		<path fill="#fff" d="M467,76H45C20.137,76,0,96.262,0,121v270c0,24.885,20.285,45,45,45h422c24.655,0,45-20.03,45-45V121
+			C512,96.306,491.943,76,467,76z M460.698,106c-9.194,9.145-167.415,166.533-172.878,171.967c-8.5,8.5-19.8,13.18-31.82,13.18
+			s-23.32-4.681-31.848-13.208C220.478,274.284,64.003,118.634,51.302,106H460.698z M30,384.894V127.125L159.638,256.08L30,384.894z
+			 M51.321,406l129.587-128.763l22.059,21.943c14.166,14.166,33,21.967,53.033,21.967c20.033,0,38.867-7.801,53.005-21.939
+			l22.087-21.971L460.679,406H51.321z M482,384.894L352.362,256.08L482,127.125V384.894z"/>
+</svg>
+                            </a>
+                        </li>
+                    </ul>
+                   
+                </div>
+                <p class="footer__text"><span class="copyright">&copy;</span> Yulian Koval 2021</p>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="js/main.min.js"></script>
