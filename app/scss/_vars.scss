@@ -1,2 +1,9 @@
 $default: #fff;
 $accent: rgb(0, 199, 197);
+
+@mixin animTransition($propery, $value) {
+    transition: $propery $value;
+}
+@mixin animDoubleTransitions($propery, $value, $secondProp, $secondVal) {
+    transition: $propery $value, $secondProp $secondVal;
+}

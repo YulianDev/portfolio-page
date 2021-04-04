@@ -185,14 +185,45 @@ showSlides(slideIndex);
                 top: coordinates,
                 behavior: 'smooth'
             });
-        }
+        };
     };
 
 
+    /* Scroll animation */
+    const animatedItems = document.querySelectorAll('.anim-item');
 
-    /* Change active class */
-    const sections = document.querySelectorAll('section[id]');
-    const sectionPosition = new Map();
+    if(animatedItems.length > 0) {
+        window.addEventListener('scroll', animOnScroll);
+        
+    };
+
+    function animOnScroll() {
+        animatedItems.forEach(item => {
+            const animItemHeight = item.offsetHeight;
+            const animItemOffset = offset(item).top;
+            const animStart = 3;
+            
+            let animPoint = window.innerHeight - animItemHeight/animStart;
+            if(animItemHeight > window.innerHeight) {
+                animPoint = window.innerHeight - window.innerHeight/animStart;
+            }
+
+            if(pageYOffset > animItemOffset - animPoint && pageYOffset < (animItemOffset + animPoint)) {
+                item.classList.add('animated');
+            } 
+        })
+    };
+
+    function offset(element) {
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        return {top: rect.top + scrollTop}
+    }
+    setTimeout(() => {
+        animOnScroll();}, 1000)
+    
+
 
 
 

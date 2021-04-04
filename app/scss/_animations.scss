@@ -7,13 +7,134 @@
     }
 }
 
-@keyframes rise {
-    0% {
+/* Item animation */
+.greeting {
+    &__text {
+        opacity: 0;
+        @include animTransition(opacity, .6s)
+    }
+    &__text.animated{
+        opacity: 1;
+    }
+
+    &__title,
+    &__subtitle {
         transform: translateY(200%);
+        opacity: 0;
+        @include animDoubleTransitions(transform, .6s , opacity, .6s)
+    }
+    &__title.animated {
+        transform: translateY(0);
+        opacity: 1;
+        transition: transform .6s linear .6s, opacity .6s linear .6s;
+    }
+    &__subtitle.animated {
+        transform: translateY(0);
+        opacity: 1;
+        transition: transform .6s linear 1.5s, opacity .6s linear 1.5s;
+    }
+
+    &__more {
         opacity: 0;
     }
-    100% {
-        transform: translateY(200%);
-        opacity: 0;
+    &__more.animated {
+        opacity: 1;
+        @include animTransition(opacity, .6s)
     }
 }
+
+.mail-box,
+.social-box {
+    opacity: 0;
+}
+.mail-box.animated,
+.social-box.animated {
+    opacity: 1;
+    transition: opacity .6s 2s;
+}
+
+.title {
+    transform: translateX(-200%);
+    opacity: 0;
+    @include animDoubleTransitions(transform, 1s, opacity, 1s)
+}
+.title.animated {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.about {
+    &__text,
+    &__img-box {
+        opacity: 0;
+        transition: all 1s;
+    }
+}
+
+.about__content.animated {
+    .about__text {
+        opacity: 1;
+        transition-delay: 1.5s;
+    }
+    .about__img-box {
+        transform: rotateY(360deg);
+        opacity: 1;
+        transition: all 2s;
+    }
+}
+
+.facts,
+.cv-box {
+    opacity: 0;
+    transform: scale(0);
+    transition: all .6s;
+}
+.facts.animated,
+.facts.animated  + .cv-box {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.skills {
+    &__subtitle {
+        opacity: 0;
+        transition: opacity .6s;
+    }
+    &__list {
+        transform: scale(0);
+        transition: transform 1.4s;
+    }
+}
+.skills__content.animated .skills{
+    &__subtitle {
+        opacity: 1;
+        transition: opacity .6s 2s;
+    }
+    &__list {
+        transform: scale(1);
+    }
+}
+
+.portfolio {
+    &__tabs {
+        transform: translateX(-200%);
+        transition: transform .6s;
+    }
+    &__preview {
+        opacity: 0;
+        transition: opacity .6s;
+    }
+}
+.portfolio__content.animated .portfolio {
+    &__tabs {
+        transform: translateX(0);
+        transition: transform 1.5s;
+    }
+    &__preview {
+        opacity: 1;
+        transition: opacity .6s 2s;
+    }
+}
+
+
+
