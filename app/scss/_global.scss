@@ -132,6 +132,13 @@
     &__nextArrow {
       transform: rotate(180deg);
     }
+    &__list {
+      transition: opacity .6s;
+    }
+    &__list.fade {
+      opacity: 0;
+      transition: opacity .6s;
+    }
   }
 
 
